@@ -4,10 +4,24 @@ Loomora V1.0 is an in-context model for tabular classification with independentl
 
 ## Installation
 
-Install Python 3.11 or later and install the inference package from this repository.
+Loomora V1.0 is distributed as the Python package `loomora` version `1.0.0`. It requires Python 3.11 or later.
+
+Install the exact release using Git tag `v1.0.0`. After the tag is published on GitHub, replace `OWNER` with the GitHub account that hosts the repository.
 
 ```sh
-python -m pip install .
+python -m pip install "loomora @ git+https://github.com/OWNER/loomora.git@v1.0.0"
+```
+
+If you already have a local Git clone, use its absolute path to install the same tag.
+
+```sh
+python -m pip install "loomora @ git+file:///opt/workspace/loomora@v1.0.0"
+```
+
+Verify that the installed package reports `1.0.0`.
+
+```sh
+python -c 'from importlib.metadata import version; print(version("loomora"))'
 ```
 
 ## Prediction

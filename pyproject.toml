@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "loomora"
-version = "1.0.0"
+dynamic = ["version"]
 description = "Loomora V1.0 inference for tabular classification"
 requires-python = ">=3.11"
 readme = "README.md"
@@ -29,3 +29,6 @@ dependencies = [
 [tool.setuptools.packages.find]
 where = ["src"]
 include = ["loomora", "loomora.*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "loomora.__version__"}
