@@ -22,7 +22,6 @@ python -c 'from importlib.metadata import version; print(version("loomora"))'
 
 Download the Loomora V1.0 checkpoint for `loomora==1.0.0`.
 
-- [Hugging Face model page](https://huggingface.co/loomoraai/Loomora-V1.0)
 - [Download loomora-v1-classifier-20261126.safetensors](https://huggingface.co/loomoraai/Loomora-V1.0/resolve/main/loomora-v1-classifier-20261126.safetensors)
 
 ## Prediction
