@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loomora"
+version = "1.0.0"
+description = "Loomora V1.0 inference for tabular classification"
+requires-python = ">=3.11"
+readme = "README.md"
+license-files = ["LICENSE", "NOTICE", "THIRD-PARTY-NOTICES.md"]
+dependencies = [
+    "torch>=2.5",
+    "numpy>=1.24",
+    "scipy>=1.11",
+    "scikit-learn>=1.3",
+    "pandas>=1.4",
+    "joblib>=1.2",
+    "packaging>=23",
+    "tqdm>=4.66",
+    "skrub>=0.7,<0.11",
+    "pydantic>=2.8",
+    "typing-extensions>=4.12",
+    "psutil>=5.9",
+    "threadpoolctl>=3.1",
+    "safetensors>=0.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["loomora", "loomora.*"]
