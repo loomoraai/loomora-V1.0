@@ -12,26 +12,27 @@ Install the exact release from GitHub using Git tag `v1.0.0`.
 python -m pip install "loomora @ git+https://github.com/loomoraai/loomora-V1.0.git@v1.0.0"
 ```
 
-If you already have a local Git clone, use its absolute path to install the same tag.
-
-```sh
-python -m pip install "loomora @ git+file:///opt/workspace/loomora@v1.0.0"
-```
-
 Verify that the installed package reports `1.0.0`.
 
 ```sh
 python -c 'from importlib.metadata import version; print(version("loomora"))'
 ```
 
+## Model weights
+
+Download the Loomora V1.0 checkpoint for `loomora==1.0.0`.
+
+- [Hugging Face model page](https://huggingface.co/loomoraai/Loomora-V1.0)
+- [Download loomora-v1-classifier-20261126.safetensors](https://huggingface.co/loomoraai/Loomora-V1.0/resolve/main/loomora-v1-classifier-20261126.safetensors)
+
 ## Prediction
 
-Get the published Loomora V1.0 weights and pass their local path to the classifier. Use the same feature columns in the labeled context and in the rows to predict.
+Download the checkpoint to your working directory or pass its location to the classifier. Use the same feature columns in the labeled context and in the rows to predict.
 
 ```python
 from loomora import LoomoraClassifier
 
-classifier = LoomoraClassifier("/opt/workspace/loomora/loomora-v1-classifier.safetensors")
+classifier = LoomoraClassifier("./loomora-v1-classifier-20261126.safetensors")
 classifier.fit(train_features, train_labels)
 probabilities = classifier.predict_proba(test_features)
 predictions = classifier.predict(test_features)
